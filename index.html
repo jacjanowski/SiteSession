@@ -10,12 +10,14 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
     <style>
-      body,html {
+      body,
+      html {
         scroll-behavior: smooth;
         background-color: #231f20;
       }
       .test,
-      .test-2, .header-btn {
+      .test-2,
+      .header-btn {
         opacity: 0;
       }
       .header {
@@ -29,7 +31,11 @@
         background-size: auto 100%;
         box-shadow: 0 0 69px 69px #231f20 inset;
       }
+      h2,h3,h4,h5 {
+        color: whitesmoke;
+      }
       h1 {
+        color: whitesmoke;
         text-align: center;
         letter-spacing: 5px;
         font-size: clamp(2.5rem, 3.118vw + 1.693rem, 4.188rem);
@@ -40,6 +46,14 @@
         font-size: clamp(1rem, 0.924vw + 0.761rem, 1.5rem);
         line-height: clamp(1.5rem, 0.554vw + 1.357rem, 1.8rem);
       }
+
+      .service-box {
+        margin: 10px auto;
+        min-height: 300px;
+        min-width: 300px;
+        background: #3f3f3f;
+        border-radius: 10px;
+      }
     </style>
   </head>
   <body>
@@ -49,7 +63,13 @@
           Providing Digital Solutions in both Web Design & Development
         </p>
         <h1 class="test">Site Session</h1>
-        <button id="header-btn" type="button" class="btn btn-lg btn-outline-light header-btn">What I Offer</button>
+        <button
+          id="header-btn"
+          type="button"
+          class="btn btn-lg btn-outline-light header-btn"
+        >
+          What I Offer
+        </button>
       </div>
       <section>
         <div class="container">
@@ -58,7 +78,41 @@
       </section>
       <section id="services">
         <div class="container">
-            <div style="height: 40vh;"></div>
+          <h2 class="text-center">Services</h2>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="service-box">
+
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="service-box">
+
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="service-box">
+
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="service-box">
+
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="service-box">
+
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="service-box">
+
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
