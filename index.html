@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <style>
+      body,html {
+        scroll-behavior: smooth;
+        background-color: #231f20;
+      }
+      .test,
+      .test-2, .header-btn {
+        opacity: 0;
+      }
+      .header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        min-height: 60vh;
+        background-image: url("img/ooorganize.svg");
+        background-size: auto 100%;
+        box-shadow: 0 0 69px 69px #231f20 inset;
+      }
+      h1 {
+        text-align: center;
+        letter-spacing: 5px;
+        font-size: clamp(2.5rem, 3.118vw + 1.693rem, 4.188rem);
+        line-height: clamp(3.75rem, 2.356vw + 3.14rem, 5.025rem);
+      }
+      p {
+        text-align: center;
+        font-size: clamp(1rem, 0.924vw + 0.761rem, 1.5rem);
+        line-height: clamp(1.5rem, 0.554vw + 1.357rem, 1.8rem);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="container header">
+        <p class="test-2 mt-2 mb-2">
+          Providing Digital Solutions in both Web Design & Development
+        </p>
+        <h1 class="test">Site Session</h1>
+        <button id="header-btn" type="button" class="btn btn-lg btn-outline-light header-btn">What I Offer</button>
+      </div>
+      <section>
+        <div class="container">
+          <img class="rellax" src="img/responsive.png" width="100%" alt="" />
+        </div>
+      </section>
+      <section id="services">
+        <div class="container">
+            <div style="height: 40vh;"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./js/bootstrap.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+
+    <!-- JS -->
+    <script>
+      window.onload = function () {
+        lax.init();
+
+        // Add a driver that we use to control our animations
+        lax.addDriver("scrollY", function () {
+          return window.scrollY;
+        });
+
+        // Add animation bindings to elements
+        lax.addElements(".selector", {
+          scrollY: {
+            translateX: [
+              ["elInY", "elCenterY", "elOutY"],
+              [0, "screenWidth/2", "screenWidth"],
+            ],
+          },
+        });
+      };
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
