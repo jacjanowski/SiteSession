@@ -1,314 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Site Sessions | Web Design & Development</title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
-    <style>
-      body,
-      html {
-        scroll-behavior: smooth;
-        background-color: #231f20;
-      }
-      .test,
-      .test-2,
-      .header-btn {
-        opacity: 0;
-      }
-      .header {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        min-height: 60vh;
-        background-image: url("img/ooorganize.svg");
-        background-size: auto 100%;
-        box-shadow: 0 0 69px 69px #231f20 inset;
-      }
-      h2,
-      h3,
-      h4,
-      h5 {
-        color: whitesmoke;
-      }
-      h1 {
-        color: whitesmoke;
-        text-align: center;
-        letter-spacing: 5px;
-        font-size: clamp(2.5rem, 3.118vw + 1.693rem, 4.188rem);
-        line-height: clamp(3.75rem, 2.356vw + 3.14rem, 5.025rem);
-      }
-      p {
-        text-align: center;
-        font-size: clamp(1rem, 0.924vw + 0.761rem, 1.5rem);
-        line-height: clamp(1.5rem, 0.554vw + 1.357rem, 1.8rem);
-      }
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Site Sessions | Web Design & Development</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/lax.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
 
-      .service-box {
-        margin: 10px auto;
-        min-height: 300px;
-        min-width: 300px;
-        background: #3f3f3f;
-        border-radius: 10px;
-        padding: 10px;
-      }
-      section {
-        padding: 4em 2em;
-      }
-      #services .row {
-        min-height: 100%;
-        display: flex;
-        align-items: stretch;
-      }
-      #services .row .col-md-4 {
-        flex: 1;
-      }
-      .service__heading {
-        font-size: clamp(1rem, 0.924vw + 0.761rem, 1.5rem);
-        line-height: clamp(1.5rem, 0.831vw + 1.285rem, 1.95rem);
-        color: whitesmoke;
-      }
-      .service__text {
-        text-align: start;
-        color: whitesmoke;
-        font-size: clamp(0.813rem, 0.577vw + 0.663rem, 1.125rem);
-        line-height: clamp(1.219rem, 0.45vw + 1.102rem, 1.463rem);
-      }
-      
-    </style>
-  </head>
-  <body>
-    <main>
-      <section class="pb-0">
-        <div class="container header">
-          <p class="test-2 mt-2 mb-2">
-            Providing Digital Solutions in both Web Design & Development
-          </p>
-          <h1 class="test">Site Session</h1>
-          <button
-            id="header-btn"
-            type="button"
-            class="btn btn-lg btn-outline-light header-btn"
-          >
-            What I Offer
-          </button>
-        </div>
-      </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+  <style>
+    body,
+    html {
+      scroll-behavior: smooth;
+      background-color: #231f20;
+    }
 
-      <section class="pt-0">
-        <div class="container">
-          <img class="rellax" src="img/responsive.png" width="100%" alt="" />
-        </div>
-      </section>
-      <section id="services">
-        <div class="container">
-          <h2 class="text-center">Services</h2>
-          <div class="row">
-            <div class="col-md-4">
-              <div class="service-box">
-                <span class="icon__symbol">
-                  <svg
-                    style="color: white"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="35"
-                    height="35"
-                  >
-                    <path
-                      d="M1 3.75C1 2.784 1.784 2 2.75 2h18.5c.966 0 1.75.784 1.75 1.75v4a.75.75 0 0 1-1.5 0v-4a.25.25 0 0 0-.25-.25H2.75a.25.25 0 0 0-.25.25v11.5c0 .138.112.25.25.25h9a.75.75 0 0 1 0 1.5h-1.287c-.126 1.266-.564 2.445-1.223 3.5h2.51a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.565-1.243c.964-1.105 1.598-2.382 1.769-3.757H2.75A1.75 1.75 0 0 1 1 15.25V3.75Z"
-                    ></path>
-                    <path
-                      d="M14 11.75c0-.967.783-1.75 1.75-1.75h5.5c.966 0 1.75.783 1.75 1.75v8.5A1.75 1.75 0 0 1 21.25 22h-5.5A1.75 1.75 0 0 1 14 20.25Zm1.75-.25a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h5.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25Z"
-                    ></path>
-                  </svg>
-                </span>
-                <h3 class="service__heading">Website Building</h3>
-                <p class="service__text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                  debitis ea facilis ad voluptatem eaque eius enim impedit,
-                  dolorem voluptas est aliquid libero pariatur blanditiis earum
-                  tempore accusantium ns quae illo quisquam reprehenderit sed
-                  fuga iste consequatur quos dolorem doloremque necessitatibus
-                  recusandae.
-                </p>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="service-box">
-                <span class="icon__symbol">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="35"
-                    height="35"
-                  >
-                    <path
-                      d="M1.75 3h20.5c.966 0 1.75.784 1.75 1.75v14a1.75 1.75 0 0 1-1.75 1.75H1.75A1.75 1.75 0 0 1 0 18.75v-14C0 3.784.784 3 1.75 3ZM1.5 7.412V18.75c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25V7.412l-9.52 6.433c-.592.4-1.368.4-1.96 0Zm0-2.662v.852l10.36 7a.25.25 0 0 0 .28 0l10.36-7V4.75a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25Z"
-                    ></path>
-                  </svg>
-                </span>
-                <h3 class="service__heading">Website Building</h3>
-                <p class="service__text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                  debitis ea facilis ad voluptatem eaque eius enim impedit,
-                  dolorem voluptas estdis voluptatum fugiat nostrum, cupiditate
-                  non officiis quae illo quisquam reprehenderit sed fuga iste
-                  consequatur quos dolorem doloremque necessitatibus recusandae.
-                </p>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="service-box">
-                <span class="icon__symbol">
-                  <svg
-                    style="color: white"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="50"
-                    height="50"
-                  >
-                    <path
-                      d="M1 3.75C1 2.784 1.784 2 2.75 2h18.5c.966 0 1.75.784 1.75 1.75v4a.75.75 0 0 1-1.5 0v-4a.25.25 0 0 0-.25-.25H2.75a.25.25 0 0 0-.25.25v11.5c0 .138.112.25.25.25h9a.75.75 0 0 1 0 1.5h-1.287c-.126 1.266-.564 2.445-1.223 3.5h2.51a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.565-1.243c.964-1.105 1.598-2.382 1.769-3.757H2.75A1.75 1.75 0 0 1 1 15.25V3.75Z"
-                    ></path>
-                    <path
-                      d="M14 11.75c0-.967.783-1.75 1.75-1.75h5.5c.966 0 1.75.783 1.75 1.75v8.5A1.75 1.75 0 0 1 21.25 22h-5.5A1.75 1.75 0 0 1 14 20.25Zm1.75-.25a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h5.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25Z"
-                    ></path>
-                  </svg>
-                </span>
-                <h3 class="service__heading">Website Building</h3>
-                <p class="service__text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                  debitis ea fa
-                </p>
-              </div>
+    .test,
+    .test-2,
+    .header-btn {
+      opacity: 0;
+    }
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      min-height: 50vh;
+      background-image: url("img/ooorganize.svg");
+      background-size: auto 100%;
+      box-shadow: 0 0 69px 69px #231f20 inset;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5 {
+      color: whitesmoke;
+    }
+
+    h1 {
+      color: whitesmoke;
+      text-align: center;
+      letter-spacing: 5px;
+      font-size: clamp(2.5rem, 3.118vw + 1.693rem, 4.188rem);
+      line-height: clamp(3.75rem, 2.356vw + 3.14rem, 5.025rem);
+    }
+
+    p {
+      text-align: center;
+      font-size: clamp(1rem, 0.924vw + 0.761rem, 1.5rem);
+      line-height: clamp(1.5rem, 0.554vw + 1.357rem, 1.8rem);
+    }
+
+    .service-box {
+      margin: 10px auto;
+      min-height: 280px;
+      min-width: 300px;
+      background: #3f3f3f;
+      border-radius: 10px;
+      padding: 10px;
+    }
+
+    section {
+      padding: 4em 2em;
+    }
+
+    #services .row {
+      min-height: 100%;
+      display: flex;
+      align-items: stretch;
+    }
+
+    #services .row .col-md-4 {
+      flex: 1;
+    }
+
+    .service__heading {
+      font-size: clamp(1rem, 0.924vw + 0.761rem, 1.5rem);
+      line-height: clamp(1.5rem, 0.831vw + 1.285rem, 1.95rem);
+      color: whitesmoke;
+    }
+
+    .service__text {
+      text-align: start;
+      color: whitesmoke;
+      font-size: clamp(0.813rem, 0.577vw + 0.663rem, 1.125rem);
+      line-height: clamp(1.219rem, 0.45vw + 1.102rem, 1.463rem);
+    }
+
+    .icon__symbol svg path {
+      fill: whitesmoke;
+      margin-bottom: 5%;
+
+    }
+
+    .icon__symbol svg path:nth-of-type(2) {
+      fill: purple;
+      margin-bottom: 5%;
+
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <section class="pb-0">
+      <div class="container header">
+        <p class="test-2 mt-2 mb-2">
+          Providing Digital Solutions in both Web Design & Development
+        </p>
+        <h1 class="test">Site Session</h1>
+        <button id="header-btn" type="button" class="btn btn-lg btn-outline-light header-btn">
+          What I Offer
+        </button>
+        <img class="rellax mt-5" src="img/responsive.png" width="100%" alt="" />
+
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <h2 class="text-center pt-2">Services</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="service-box">
+              <span class="icon__symbol">
+                <svg style="color: white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35">
+                  <path
+                    d="M1 3.75C1 2.784 1.784 2 2.75 2h18.5c.966 0 1.75.784 1.75 1.75v4a.75.75 0 0 1-1.5 0v-4a.25.25 0 0 0-.25-.25H2.75a.25.25 0 0 0-.25.25v11.5c0 .138.112.25.25.25h9a.75.75 0 0 1 0 1.5h-1.287c-.126 1.266-.564 2.445-1.223 3.5h2.51a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.565-1.243c.964-1.105 1.598-2.382 1.769-3.757H2.75A1.75 1.75 0 0 1 1 15.25V3.75Z">
+                  </path>
+                  <path
+                    d="M14 11.75c0-.967.783-1.75 1.75-1.75h5.5c.966 0 1.75.783 1.75 1.75v8.5A1.75 1.75 0 0 1 21.25 22h-5.5A1.75 1.75 0 0 1 14 20.25Zm1.75-.25a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h5.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25Z">
+                  </path>
+                </svg>
+              </span>
+              <h3 class="service__heading">Custom Websites</h3>
+              <p class="service__text">
+                From personal portfolios to e-commerce to enterprise organizations, websites are built with stunning
+                visuals & interactions, all while capturing user attention. Seamless coding following standard
+                practices. Responsiveness on all devices.
+              </p>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-4">
-              <div class="service-box">
-                <span class="icon__symbol">
-                  <svg
-                    style="color: white"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="50"
-                    height="50"
-                  >
-                    <path
-                      d="M1 3.75C1 2.784 1.784 2 2.75 2h18.5c.966 0 1.75.784 1.75 1.75v4a.75.75 0 0 1-1.5 0v-4a.25.25 0 0 0-.25-.25H2.75a.25.25 0 0 0-.25.25v11.5c0 .138.112.25.25.25h9a.75.75 0 0 1 0 1.5h-1.287c-.126 1.266-.564 2.445-1.223 3.5h2.51a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.565-1.243c.964-1.105 1.598-2.382 1.769-3.757H2.75A1.75 1.75 0 0 1 1 15.25V3.75Z"
-                    ></path>
-                    <path
-                      d="M14 11.75c0-.967.783-1.75 1.75-1.75h5.5c.966 0 1.75.783 1.75 1.75v8.5A1.75 1.75 0 0 1 21.25 22h-5.5A1.75 1.75 0 0 1 14 20.25Zm1.75-.25a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h5.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25Z"
-                    ></path>
-                  </svg>
-                </span>
-                <h3 class="service__heading">Website Building</h3>
-                <p class="service__text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                  debitis ea facilis quae illo quisquam reprehenderit sed fuga
-                  iste consequatur quos dolorem doloremque necessitatibus
-                  recusandae.
-                </p>
-              </div>
+          <div class="col-md-4">
+            <div class="service-box">
+              <span class="icon__symbol">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="35" height="35">
+                  <path
+                    d="M10.5 3.5H1.75a.25.25 0 0 0-.25.25v.32L8 7.88l3.02-1.77a.75.75 0 0 1 .758 1.295L8.379 9.397a.75.75 0 0 1-.758 0L1.5 5.809v6.441c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-4.5a.75.75 0 0 1 1.5 0v4.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25V4.513a.75.75 0 0 1 0-.027V3.75C0 2.784.784 2 1.75 2h8.75a.75.75 0 0 1 0 1.5Z">
+                  </path>
+                  <path d="M14 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"></path>
+                </svg>
+              </span>
+              <h3 class="service__heading">Custom Emails</h3>
+              <p class="service__text">
+                Ignite engagement with custom HTML emails. Tailored designs and coding focusing on strategies used by
+                top rated companies. Responsiveness on all devices.
+              </p>
             </div>
-            <div class="col-md-4">
-              <div class="service-box">
-                <span class="icon__symbol">
-                  <svg
-                    style="color: white"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="50"
-                    height="50"
-                  >
-                    <path
-                      d="M1 3.75C1 2.784 1.784 2 2.75 2h18.5c.966 0 1.75.784 1.75 1.75v4a.75.75 0 0 1-1.5 0v-4a.25.25 0 0 0-.25-.25H2.75a.25.25 0 0 0-.25.25v11.5c0 .138.112.25.25.25h9a.75.75 0 0 1 0 1.5h-1.287c-.126 1.266-.564 2.445-1.223 3.5h2.51a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.565-1.243c.964-1.105 1.598-2.382 1.769-3.757H2.75A1.75 1.75 0 0 1 1 15.25V3.75Z"
-                    ></path>
-                    <path
-                      d="M14 11.75c0-.967.783-1.75 1.75-1.75h5.5c.966 0 1.75.783 1.75 1.75v8.5A1.75 1.75 0 0 1 21.25 22h-5.5A1.75 1.75 0 0 1 14 20.25Zm1.75-.25a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h5.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25Z"
-                    ></path>
-                  </svg>
-                </span>
-                <h3 class="service__heading">Website Building</h3>
-                <p class="service__text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                  debitis ea facilis ad voluptatem eaque eius enim impedit,
-                  dolorem voluptas est aliquid libero pariatur blanditiis earum
-                  tempore accusantium nesciunt sapiente molestiae adipisci nobis
-                  recusandae? Cumque dis voluptatum fugiat nostrum, cupiditate
-                  non officiis quae illo quisquam reprehenderit sed fuga iste
-                  consequatur quos dolorem doloremque necessitatibus recusandae.
-                </p>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="service-box">
-                <span class="icon__symbol">
-                  <svg
-                    style="color: white"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width="50"
-                    height="50"
-                  >
-                    <path
-                      d="M1 3.75C1 2.784 1.784 2 2.75 2h18.5c.966 0 1.75.784 1.75 1.75v4a.75.75 0 0 1-1.5 0v-4a.25.25 0 0 0-.25-.25H2.75a.25.25 0 0 0-.25.25v11.5c0 .138.112.25.25.25h9a.75.75 0 0 1 0 1.5h-1.287c-.126 1.266-.564 2.445-1.223 3.5h2.51a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.565-1.243c.964-1.105 1.598-2.382 1.769-3.757H2.75A1.75 1.75 0 0 1 1 15.25V3.75Z"
-                    ></path>
-                    <path
-                      d="M14 11.75c0-.967.783-1.75 1.75-1.75h5.5c.966 0 1.75.783 1.75 1.75v8.5A1.75 1.75 0 0 1 21.25 22h-5.5A1.75 1.75 0 0 1 14 20.25Zm1.75-.25a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h5.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25Z"
-                    ></path>
-                  </svg>
-                </span>
-                <h3 class="service__heading">Website Building</h3>
-                <p class="service__text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                  debitis ea facie illo quisquam reprehenderit sed fuga iste
-                  consequatur quos dolorem doloremque necessitatibus recusandae.
-                </p>
-              </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-box">
+              <span class="icon__symbol">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35">
+                  <path d="M2.5 2.75a.75.75 0 0 0-1.5 0v18.5c0 .414.336.75.75.75H20a.75.75 0 0 0 0-1.5H2.5V2.75Z">
+                  </path>
+                  <path
+                    d="M22.28 7.78a.75.75 0 0 0-1.06-1.06l-5.72 5.72-3.72-3.72a.75.75 0 0 0-1.06 0l-6 6a.75.75 0 1 0 1.06 1.06l5.47-5.47 3.72 3.72a.75.75 0 0 0 1.06 0l6.25-6.25Z">
+                  </path>
+                </svg>
+              </span>
+              <h3 class="service__heading">SEO Analysis</h3>
+              <p class="service__text">
+                Boost online visibility and presence. Thorough strategies, keyword optimization, and results-driven
+                approach. Elevate your website's ranking and brand recognition.
+              </p>
             </div>
           </div>
         </div>
-      </section>
-    </main>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="service-box">
+              <span class="icon__symbol">
+                <svg style="color: white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50">
+                  <path
+                    d="M1 3.75C1 2.784 1.784 2 2.75 2h18.5c.966 0 1.75.784 1.75 1.75v4a.75.75 0 0 1-1.5 0v-4a.25.25 0 0 0-.25-.25H2.75a.25.25 0 0 0-.25.25v11.5c0 .138.112.25.25.25h9a.75.75 0 0 1 0 1.5h-1.287c-.126 1.266-.564 2.445-1.223 3.5h2.51a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.565-1.243c.964-1.105 1.598-2.382 1.769-3.757H2.75A1.75 1.75 0 0 1 1 15.25V3.75Z">
+                  </path>
+                  <path
+                    d="M14 11.75c0-.967.783-1.75 1.75-1.75h5.5c.966 0 1.75.783 1.75 1.75v8.5A1.75 1.75 0 0 1 21.25 22h-5.5A1.75 1.75 0 0 1 14 20.25Zm1.75-.25a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h5.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25Z">
+                  </path>
+                </svg>
+              </span>
+              <h3 class="service__heading">SEO Analysis</h3>
+              <p class="service__text">
+                Boost online visibility and presence. Thorough strategies, keyword optimization, and results-driven
+                approach. Elevate your website's ranking and brand recognition.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-box">
+              <span class="icon__symbol">
+                <svg style="color: white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50">
+                  <path
+                    d="M1 3.75C1 2.784 1.784 2 2.75 2h18.5c.966 0 1.75.784 1.75 1.75v4a.75.75 0 0 1-1.5 0v-4a.25.25 0 0 0-.25-.25H2.75a.25.25 0 0 0-.25.25v11.5c0 .138.112.25.25.25h9a.75.75 0 0 1 0 1.5h-1.287c-.126 1.266-.564 2.445-1.223 3.5h2.51a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.565-1.243c.964-1.105 1.598-2.382 1.769-3.757H2.75A1.75 1.75 0 0 1 1 15.25V3.75Z">
+                  </path>
+                  <path
+                    d="M14 11.75c0-.967.783-1.75 1.75-1.75h5.5c.966 0 1.75.783 1.75 1.75v8.5A1.75 1.75 0 0 1 21.25 22h-5.5A1.75 1.75 0 0 1 14 20.25Zm1.75-.25a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h5.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25Z">
+                  </path>
+                </svg>
+              </span>
+              <h3 class="service__heading">Website Building</h3>
+              <p class="service__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+                debitis ea facilis ad voluptatem eaque eius enim impedit,
+                dolorem voluptas est aliquid libero pariatur blanditiis earum
+                tempore accusantium nesciunt sapiente molestiae adipisci nobis
+                recusandae? Cumque dis voluptatum fugiat nostrum, cupiditate
+                non officiis quae illo quisquam reprehenderit sed fuga iste
+                consequatur quos dolorem doloremque necessitatibus recusandae.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-box">
+              <span class="icon__symbol">
+                <svg style="color: white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50">
+                  <path
+                    d="M1 3.75C1 2.784 1.784 2 2.75 2h18.5c.966 0 1.75.784 1.75 1.75v4a.75.75 0 0 1-1.5 0v-4a.25.25 0 0 0-.25-.25H2.75a.25.25 0 0 0-.25.25v11.5c0 .138.112.25.25.25h9a.75.75 0 0 1 0 1.5h-1.287c-.126 1.266-.564 2.445-1.223 3.5h2.51a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.565-1.243c.964-1.105 1.598-2.382 1.769-3.757H2.75A1.75 1.75 0 0 1 1 15.25V3.75Z">
+                  </path>
+                  <path
+                    d="M14 11.75c0-.967.783-1.75 1.75-1.75h5.5c.966 0 1.75.783 1.75 1.75v8.5A1.75 1.75 0 0 1 21.25 22h-5.5A1.75 1.75 0 0 1 14 20.25Zm1.75-.25a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h5.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25Z">
+                  </path>
+                </svg>
+              </span>
+              <h3 class="service__heading">Website Building</h3>
+              <p class="service__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+                debitis ea facie illo quisquam reprehenderit sed fuga iste
+                consequatur quos dolorem doloremque necessitatibus recusandae.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <script src="./js/bootstrap.min.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.7.1.min.js"
-      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
-    <script src="https://unpkg.com/split-type"></script>
+  </main>
 
-    <!-- JS -->
-    <script>
-      window.onload = function () {
-        lax.init();
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
 
-        // Add a driver that we use to control our animations
-        lax.addDriver("scrollY", function () {
-          return window.scrollY;
-        });
+  <!-- JS -->
+  <script>
+    window.onload = function () {
+      lax.init();
 
-        // Add animation bindings to elements
-        lax.addElements(".selector", {
-          scrollY: {
-            translateX: [
-              ["elInY", "elCenterY", "elOutY"],
-              [0, "screenWidth/2", "screenWidth"],
-            ],
-          },
-        });
-      };
-    </script>
-    <script src="script.js"></script>
-  </body>
+      // Add a driver that we use to control our animations
+      lax.addDriver("scrollY", function () {
+        return window.scrollY;
+      });
+
+      // Add animation bindings to elements
+      lax.addElements(".selector", {
+        scrollY: {
+          translateX: [
+            ["elInY", "elCenterY", "elOutY"],
+            [0, "screenWidth/2", "screenWidth"],
+          ],
+        },
+      });
+    };
+  </script>
+  <script src="script.js"></script>
+</body>
+
 </html>

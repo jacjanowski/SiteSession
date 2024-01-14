@@ -20,7 +20,7 @@ $(document).ready(function () {
     );
   });
   var rellax = new Rellax(".rellax", {
-    speed: -2,
+    speed: 2,
     horizontal: true,
   });
 });
