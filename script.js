@@ -1,10 +1,5 @@
 gsap.registerPlugin(ScrollTrigger);
 
-var tl = gsap.timeline();
-tl.to(".test", { opacity: 1, duration: 0.7, y: -50 });
-tl.to(".test-2", { opacity: 1, duration: 1, y: 80 });
-tl.to(".header-btn", { opacity: 1 });
-
 let timeln = gsap.timeline({
   scrollTrigger: {
     trigger: ".services",
@@ -69,7 +64,7 @@ timeln.to(".card-3", {});
 const tlZoom = gsap.timeline({
   scrollTrigger: {
     trigger: ".container-zoom",
-    start: "top top",
+    start: "top 40%",
     end: "bottom center",
     pin: true,
     markers: true,
@@ -79,12 +74,12 @@ const tlZoom = gsap.timeline({
 });
 tlZoom
   .to(".circle", {
-    scale: 10,
+    scale: 5,
   })
   .to(
     "h1",
     {
-      scale: 10,
+      scale: -1,
     },
     0
   )

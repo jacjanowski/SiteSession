@@ -26,11 +26,7 @@
         background-color: #231f20;
       }
 
-      .test,
-      .test-2,
-      .header-btn {
-        opacity: 0;
-      }
+
       main {
         background-image: url("img/ooorganize.svg");
         background-size: auto 100%;
@@ -84,6 +80,7 @@
       }
 
       section {
+        overflow: hidden;
         padding: 2em;
       }
 
@@ -191,11 +188,12 @@
       }
 
       .circle {
+        clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+
         height: 200px;
-        width: 200px;
+        width: 400px;
         margin-top: 4rem;
-        background: #ededed;
-        border-radius: 100%;
+        background: #3f3f3f;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -231,10 +229,11 @@
     <main>
       <section class="pb-0">
         <div class="container header">
-          <p class="test-2 mt-2 mb-2">
+
+          <h1 class="boujee-text">Site Session</h1>
+          <p class="mt-2 mb-2">
             Providing Digital Solutions in both Web Design & Development
           </p>
-          <h1 class="test boujee-text">Site Session</h1>
           <button
             id="header-btn"
             type="button"
@@ -280,7 +279,7 @@
                     From personal portfolios to e-commerce to enterprise
                     organizations, websites are built with stunning visuals &
                     interactions, all while capturing user attention. Seamless
-                    coding following standard practices. Responsiveness on all
+                    coding and responsiveness on all
                     devices.
                   </p>
                 </div>
@@ -337,7 +336,7 @@
       <section>
         <div class="container-zoom">
           <div class="circle">
-            <h1>scale</h1>
+            <h1>Get In Touch</h1>
           </div>
         </div>
         <div class="more-content">
@@ -411,6 +410,7 @@
         });
       };
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js" integrity="sha512-HaoDYc3PGduguBWOSToNc0AWGHBi2Y432Ssp3wNIdlOzrunCtB2qq6FrhtPbo+PlbvRbyi86dr5VQx61eg/daQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="script.js"></script>
   </body>
 </html>
