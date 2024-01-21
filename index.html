@@ -26,7 +26,6 @@
         background-color: #231f20;
       }
 
-
       main {
         background-image: url("img/ooorganize.svg");
         background-size: auto 100%;
@@ -77,6 +76,11 @@
         background: #3f3f3f;
         border-radius: 10px;
         padding: 10px;
+      }
+      #success,
+      #failure {
+        color: white;
+        display: none;
       }
 
       section {
@@ -172,6 +176,11 @@
         top: 70px;
       }
 
+      .card-4 {
+        left: 105px;
+        top: 105px;
+      }
+
       .card h2 {
         font-size: 80px;
         font-weight: 900;
@@ -186,11 +195,25 @@
         justify-content: center;
         position: relative;
       }
+      #services-cards {
+        padding-bottom: 5em;
+      }
 
       .circle {
-        clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+        clip-path: polygon(
+          0% 0%,
+          0% 100%,
+          25% 100%,
+          25% 25%,
+          75% 25%,
+          75% 75%,
+          25% 75%,
+          25% 100%,
+          100% 100%,
+          100% 0%
+        );
 
-        height: 200px;
+        height: 400px;
         width: 400px;
         margin-top: 4rem;
         background: #3f3f3f;
@@ -199,7 +222,11 @@
         justify-content: center;
         position: relative;
       }
-
+      .get-in-touch {
+        text-align: center;
+        position: absolute;
+        top: 200px;
+      }
 
       .more-content {
         max-width: 900px;
@@ -212,6 +239,56 @@
         initial-value: 100%;
         inherits: false;
       }
+
+      form {
+        max-width: 420px;
+        margin: 50px auto;
+      }
+
+      .feedback-input {
+        color: white;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        border-radius: 5px;
+        line-height: 22px;
+        background-color: transparent;
+        border: 2px solid #cc6666;
+        transition: all 0.3s;
+        padding: 13px;
+        margin-bottom: 15px;
+        width: 100%;
+        box-sizing: border-box;
+        outline: 0;
+      }
+
+      .feedback-input:focus {
+        border: 2px solid #cc4949;
+      }
+
+      textarea {
+        height: 150px;
+        line-height: 150%;
+        resize: vertical;
+      }
+
+      [type="submit"] {
+        width: 100%;
+        background: #cc6666;
+        border-radius: 5px;
+        border: 0;
+        cursor: pointer;
+        color: white;
+        font-size: 24px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        transition: all 0.3s;
+        margin-top: -4px;
+        font-weight: 700;
+      }
+      [type="submit"]:hover {
+        background: #cc4949;
+      }
       @media (prefers-reduced-motion: no-preference) {
         .boujee-text {
           animation: move-bg 8s linear infinite;
@@ -222,6 +299,68 @@
           }
         }
       }
+
+      .chevron {
+        position: absolute;
+        width: 28px;
+        height: 8px;
+        opacity: 0;
+        transform: scale3d(0.5, 0.5, 0.5);
+        animation: move 3s ease-out infinite;
+      }
+
+      .chevron:first-child {
+        animation: move 3s ease-out 1s infinite;
+      }
+
+      .chevron:nth-child(2) {
+        animation: move 3s ease-out 2s infinite;
+      }
+
+      .chevron:before,
+      .chevron:after {
+        content: " ";
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 51%;
+        background: #fff;
+      }
+
+      .chevron:before {
+        left: 0;
+        transform: skew(0deg, 30deg);
+      }
+
+      .chevron:after {
+        right: 0;
+        width: 50%;
+        transform: skew(0deg, -30deg);
+      }
+
+      @keyframes move {
+        25% {
+          opacity: 1;
+        }
+        33% {
+          opacity: 1;
+          transform: translateY(30px);
+        }
+        67% {
+          opacity: 1;
+          transform: translateY(40px);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+        }
+      }
+
+      @media only screen and (max-width: 767px) {
+        #contact-row {
+          flex-direction: column-reverse;
+        }
+      }
     </style>
   </head>
 
@@ -229,11 +368,32 @@
     <main>
       <section class="pb-0">
         <div class="container header">
-
           <h1 class="boujee-text">Site Session</h1>
           <p class="mt-2 mb-2">
             Providing Digital Solutions in both Web Design & Development
           </p>
+          <div class="row pt-3 pb-3">
+            <div class="col-md">
+              <svg width="50" height="50" viewBox="0 0 128 128">
+                <path
+                  fill="#E44D26"
+                  d="M19.037 113.876L9.032 1.661h109.936l-10.016 112.198-45.019 12.48z"
+                ></path>
+                <path
+                  fill="#F16529"
+                  d="M64 116.8l36.378-10.086 8.559-95.878H64z"
+                ></path>
+                <path
+                  fill="#EBEBEB"
+                  d="M64 52.455H45.788L44.53 38.361H64V24.599H29.489l.33 3.692 3.382 37.927H64zm0 35.743l-.061.017-15.327-4.14-.979-10.975H33.816l1.928 21.609 28.193 7.826.063-.017z"
+                ></path>
+                <path
+                  fill="#fff"
+                  d="M63.952 52.455v13.763h16.947l-1.597 17.849-15.35 4.143v14.319l28.215-7.82.207-2.325 3.234-36.233.335-3.696h-3.708zm0-27.856v13.762h33.244l.276-3.092.628-6.978.329-3.692z"
+                ></path>
+              </svg>
+            </div>
+          </div>
           <button
             id="header-btn"
             type="button"
@@ -252,7 +412,23 @@
             width="100%"
             alt=""
           />
+        </div>
+      </section>
 
+      <section id="services-cards">
+        <div class="container-zoom">
+          <div class="circle"></div>
+          <h2 class="get-in-touch">
+            Get In Touch<br />
+            <a class="next-button" href="#" style="display: flex; align-items: center; justify-content: center;">
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+            </a>
+          </h2>
+        </div>
+
+        <div class="container">
           <div class="row services">
             <div class="col-md">
               <h2 class="text-center">Services</h2>
@@ -279,8 +455,7 @@
                     From personal portfolios to e-commerce to enterprise
                     organizations, websites are built with stunning visuals &
                     interactions, all while capturing user attention. Seamless
-                    coding and responsiveness on all
-                    devices.
+                    coding and responsiveness on all devices.
                   </p>
                 </div>
                 <div class="card card-2">
@@ -327,54 +502,76 @@
                     your website's ranking and brand recognition.
                   </p>
                 </div>
+                <div class="card card-4">
+                  <span class="icon__symbol">
+                    <img src="./img/hubspot.svg" width="50" alt="" />
+                  </span>
+                  <h3 class="service__heading">HubSpot Marketing</h3>
+                  <p class="service__text">
+                    Experienced marketer in HubSpot. Proven track record in
+                    strategic campaigns, lead generation, and customer
+                    engagement through custom landing pages and personalized
+                    emails. Expert in optimizing workflows and analyzing
+                    performance metrics for continuous improvement.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section>
-        <div class="container-zoom">
-          <div class="circle">
-            <h1>Get In Touch</h1>
-          </div>
-        </div>
-        <div class="more-content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </div>
+      <section id="contact">
+        <div class="container">
+          <h2 class="text-center">Have questions? Contact me directly.</h2>
 
-        <div class="more-content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </div>
-        <div class="more-content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </div>
-        <div class="more-content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          <div id="contact-row" class="row">
+            <div class="col-md">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39913.26271255231!2d-87.99645399670348!3d41.96654879947333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fb230e2f4643b%3A0x9dd0f6faba1ee816!2sWood%20Dale%2C%20IL!5e0!3m2!1sen!2sus!4v1705858155214!5m2!1sen!2sus"
+                width="100%"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+
+            <div class="col-md">
+              <form>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  class="feedback-input"
+                  placeholder="Name"
+                />
+                <input
+                  id="email"
+                  name="email"
+                  type="text"
+                  class="feedback-input"
+                  placeholder="Email"
+                />
+                <textarea
+                  id="message"
+                  name="text"
+                  class="feedback-input"
+                  placeholder="Comment"
+                ></textarea>
+                <input type="submit" value="SUBMIT" />
+              </form>
+              <p id="success">
+                You have successfully submitted the form! I will reach out to
+                you as soon as possible!
+              </p>
+              <p id="failure">
+                There was an error submitting the form... In this case, send me
+                a text message and I'll reply right away.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -385,6 +582,12 @@
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+    />
+
     <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
     <script src="https://unpkg.com/split-type"></script>
@@ -410,7 +613,13 @@
         });
       };
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js" integrity="sha512-HaoDYc3PGduguBWOSToNc0AWGHBi2Y432Ssp3wNIdlOzrunCtB2qq6FrhtPbo+PlbvRbyi86dr5VQx61eg/daQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"
+      integrity="sha512-HaoDYc3PGduguBWOSToNc0AWGHBi2Y432Ssp3wNIdlOzrunCtB2qq6FrhtPbo+PlbvRbyi86dr5VQx61eg/daQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
