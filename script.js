@@ -1,5 +1,5 @@
 gsap.registerPlugin(ScrollTrigger);
-
+AOS.init({once: true});
 $('form').submit(function(e){
   e.preventDefault();      
   
@@ -124,11 +124,8 @@ tlZoom
   });
 
 $(document).ready(function () {
-  //   var image = document.getElementsByClassName("thumbnail");
-  //   new simpleParallax(image, {
-  //     scale: 1.5,
-  //   });
-  $("#header-btn, .next-button").click(function () {
+ 
+  $("#header-btn, .next-button, .service-link").click(function () {
     // Adjust the speed and offset as needed
     $("html, body").animate(
       {
@@ -137,8 +134,19 @@ $(document).ready(function () {
       150
     );
   });
+
+  $(".contact-link").click(function () {
+    // Adjust the speed and offset as needed
+    $("html, body").animate(
+      {
+        scrollTop: $("#contact").offset().top,
+      },
+      150
+    );
+  });
+
   var rellax = new Rellax(".rellax", {
-    speed: 6,
+    speed: -6,
     horizontal: true,
   });
 });
